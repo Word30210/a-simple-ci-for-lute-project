@@ -1,0 +1,23 @@
+name: Github Action Practice
+
+run-name: ${{ github.actor }} is testing out a workflow
+
+on [push]
+
+jobs:
+  explore-github-actions:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - run: echo "the job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "the workflow is running on a ${{ github.os }} server hosted by Github Actions."
+      - run: echo "the workflow is named ${{ github.workflow }} and it is running on the ${{ github.run_id }} run number."
+      - run: echo "the name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v6
+      - run: echo "the repository code has been cloned to the runner."
+      - name: "List files in the repository"
+        run: |
+          ls ${{ github.workspace }}
+          echo "the repository files have been listed."
+      - run: echo "this job's status is ${{ job.status }}."
