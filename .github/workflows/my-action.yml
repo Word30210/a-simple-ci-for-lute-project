@@ -2,7 +2,7 @@ name: Github Action Practice
 
 run-name: ${{ github.actor }} is testing out a workflow
 
-on [push]
+on: [push]
 
 jobs:
   explore-github-actions:
